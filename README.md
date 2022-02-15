@@ -6,7 +6,7 @@ Users should be able to:
 - posting task and can edit or delete and display all tasks posted 
 
 # Backend 
-In this project, the user can post/delete/edit tasks by using Firebase Storage which help to upload and store uuser-generated content with REST APIs requests ( GET , POST, PUT, PATCH or DELETE) 
+In this project, the user can post/delete/edit tasks by using Cloud Firestore with REST APIs requests ( GET , POST, PUT, PATCH or DELETE) 
 
 # Built with 
 - setup npm. 
@@ -24,7 +24,7 @@ In this project, the user can post/delete/edit tasks by using Firebase Storage w
 -
 -
 
-# live demo
+# live Demo
 
 - [Tasks](https://zainabadel501.github.io/tasks/)
 
