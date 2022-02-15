@@ -15,18 +15,18 @@ In this project, the user can post/delete/edit tasks by using Cloud Firestore wi
 - Angular Pipes. 
 - Bootstap.
 - TypeScript.
-- Firebase Storage.
+- Cloud Firestore.
 
-# functions not working 
+# Functions not working 
 -'Edit function' it's worked properly until now I can't get the value from the database and set them in the text field.
-
-# next Step 
--
--
 
 # live Demo
 
-- [Tasks](https://zainabadel501.github.io/tasks/)
+- [Tasks](https://zainabadel501.github.io/tasks/).
+
+# Next Step 
+-
+-
 
 
 
