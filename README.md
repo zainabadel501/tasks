@@ -18,7 +18,7 @@ In this project, the user can post/delete/edit tasks by using Cloud Firestore wi
 - Cloud Firestore.
 
 # Functions not working 
--'Edit function' it's worked properly until now I can't get the value from the database and set them in the text field.
+- 'Edit function' it's worked properly until now I can't get the value from the database and set them in the text field.
 
 # live Demo
 
