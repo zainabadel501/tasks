@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBF8F1;
+}
+
+.navbar {
+    margin-bottom: 8%;
+}
+
+
+.card {
+    margin: 4% auto;
+    border-radius: 18px;
+    // border-color: #54BAB9;
+    
+    width : 50%;
+    text-align: center;
+    &__input{
+        padding: 0 2rem;
+    }
+
+}
+.alert {
+    padding: 0;
+}
+@media (max-width: 992px){
+    .card {
+        width: 80%;
+        
+    }
+}
+
+@media (max-width: 575px){
+    .card {
+        
+        margin: 2% auto;
+    }
+}
+
+.form-control{
+    margin: 0.7rem 0;    
+}
+
+.btn-primary {
+    background-color: #54BAB9;
+    border-color: aliceblue;
+}
+.btn-primary:hover {
+    background-color: #FBF8F1;
+    border-color: #54BAB9;
+    color: #54BAB9;
+}
+
+.btn-danger {
+    background-color: #FF6464;
+    border-color: aliceblue;
+}
+.btn-danger:hover {
+    background-color: #FBF8F1;
+    border-color: #FF6464;
+    color: #FF6464;
+}
+
+
+.right_input{
+    border-color: none;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border-color: #FF6464;
+}
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+
+
+.navbar-brand {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700; 
+}
+
+.container-fluid {
+    padding: 0 6%;
+}
+
+a {
+    text-decoration: none;
+    color: #B667F1;
+}
+
+a:hover {
+    color: #FBF8F1;
+}
+
+.btn-outline-primary:hover {
+    background-color: #B667F1;
+    border-color: #FBF8F1;
+    
+}
+.btn-outline-primary {
+    // background-color: #FBF8F1;
+    border-color: #B667F1;
+    
+}

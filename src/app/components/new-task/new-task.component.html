@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body">
+        
+      <h5 class="card-title">New task</h5>
+      <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
+      <form [formGroup]="newtaskform" (ngSubmit)="post()">
+      <div class="card__input">
+          <input formControlName="title" name="title"  class="form-control" type="text" placeholder="title" aria-label="default input example">
+          <textarea  formControlName="task" name="task"  class="form-control" type="textarea" placeholder="task" aria-label="default input example"></textarea>
+          <div class="btn-group">
+            <button  type="submit" class="btn btn-primary">Post</button>
+            <button  type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
+           </div>
+      </div>
+    </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

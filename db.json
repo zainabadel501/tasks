@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "reading",
+      "task": "build a full stack web application using angular and firebase."
+    },
+    {
+      "id": 2,
+      "title": "netflix",
+      "task": "anne with e"
+    },
+    {
+      "id": 3,
+      "title": "learning",
+      "task": "deploying angular file to firebase"
+    },
+    {
+      "id": 4,
+      "task": "task test dis",
+      "title": "task test "
+    },
+    {
+      "id": 5,
+      "task": "ttttttt",
+      "title": "yyyj"
+    }
+  ]
+}

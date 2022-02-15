@@ -1,0 +1,53 @@
+.btn {
+    margin-left: .4rem;
+}
+
+  .row .card{
+    width : 100%;
+    text-align: left;
+    height: 13rem;
+
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.btn-edit {
+    margin-bottom: .4rem;
+    color: green;
+}
+
+.btn-red {
+    color:red;
+}
+
+
+
+
+
+  @media screen and (min-width: 768px) {
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .btns {
+        display: block;   
+    }
+
+    .btn-edit {
+        margin-bottom: 0;
+
+    }
+
+}
