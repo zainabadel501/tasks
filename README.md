@@ -24,9 +24,9 @@ In this project, the user can post/delete/edit tasks by using Firebase Storage w
 -
 -
 
-#live demo
+# live demo
 
--[Tasks](https://zainabadel501.github.io/tasks/)
+- [Tasks](https://zainabadel501.github.io/tasks/)
 
 
 
