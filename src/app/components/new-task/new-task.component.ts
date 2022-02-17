@@ -1,10 +1,10 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder , FormGroup } from '@angular/forms';
+import {  FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/shared/data.service';
-import { newTaskModel } from '../../shared/new-task.model';
+
 
 @Component({
   selector: 'app-new-task',
