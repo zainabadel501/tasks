@@ -11,7 +11,7 @@ import { DataService } from 'src/app/shared/data.service';
 })
 export class EditTaskComponent implements OnInit {
    
-  taskData !:any;
+  taskData :any = this.newtaskdat.taskData;
 
   
   constructor( private Api : ApiService , private router: Router , private newtaskdat : DataService ) { }
@@ -21,29 +21,22 @@ export class EditTaskComponent implements OnInit {
   }
 
   getAlltask(){
-    // this.Api.getTask().subscribe(res=>{
-    //   this.taskData=res;
-    // })
+
     this.newtaskdat.getTask().subscribe(res=>{
         this.taskData=res;
       });
   }
 
   deleteTask(row: any){
-    // this.Api.deleteTask(row.id).subscribe(res=>{
-    //   alert("task deleted");
-    //   this.getAlltask();
-    // });
-
     this.newtaskdat.deleteTask(row);
-
+    console.log(row);
   }
 
   onEdit(row : any){
-    //check tomorr
-    // this.newtaskdat.form.controls['title'].setValue(row.title);
-    // this.newtaskdat.form.controls['task'].setValue(row.task);
-    this.newtaskdat.UpdateTask(row);
+    this.newtaskdat.update=true;
+    this.newtaskdat.onEditdata(row);
+    this.newtaskdat.taskData=row;
+    
   }
 
   

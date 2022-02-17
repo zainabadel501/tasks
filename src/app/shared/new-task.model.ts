@@ -1,10 +1,8 @@
-export class newTaskModel {
-    id : number = 0 ;
-    task : any = "";
-    title : any="";
+export interface newTaskModel {
+    id?: number
+    title: string
+    task:string
 
-    tasks = {
-        title : "",
-        task :""
-      };
+    
+
 }

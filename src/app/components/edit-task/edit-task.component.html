@@ -5,7 +5,8 @@
             <div class="card-body">
               <div>
               <h5 class="card-title">{{r.payload.doc.data().title}}</h5>
-              <p class="card-text">{{r.payload.doc.data().task}}</p>
+              <p class="card-text">{{r.payload.doc.data().task}} </p>
+              <h3>{{r.payload.doc.data().id}} </h3>
             </div>
             <div class="btns">
               <a class="btn btn-edit" routerLink="/NewTask" (click)="onEdit(r)">Edit</a>

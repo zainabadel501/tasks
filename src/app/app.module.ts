@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './shared/api.service';
 import { DataService } from './shared/data.service';
 import { NgMaterialModule } from './ng-material/ng-material.module';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 
 
@@ -36,7 +36,10 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgMaterialModule,
-    CKEditorModule,
+   
+    
+   
+    
     
   ],
   providers: [ApiService , DataService],
