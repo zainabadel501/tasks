@@ -5,12 +5,17 @@
       <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
       <form [formGroup]="newtaskform" (ngSubmit)="post()">
       <div class="card__input">
-          <input formControlName="title" name="title"  class="form-control" type="text" placeholder="title" aria-label="default input example">
-          <textarea  formControlName="task" name="task"  class="form-control" type="textarea" placeholder="task" aria-label="default input example"></textarea>
+          <input name="title"  class="form-control" type="text" placeholder="title" aria-label="default input example" formControlName="title" required >
+             <div class="text-danger" *ngIf="newtaskform.hasError( 'required' , 'title' ) && newtaskform.controls['title'].dirty">filed required</div>
+          <textarea  name="task"  class="form-control" type="textarea" placeholder="task" aria-label="default input example" formControlName="task"></textarea>
+          <div class="text-danger" *ngIf="newtaskform.hasError( 'required' , 'task' ) && newtaskform.controls['task'].dirty">filed required</div>
           <div class="btn-group">
-            <button  type="submit" class="btn btn-primary">Post</button>
-            <button  type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
-           </div>
+            <button  type="submit" class="btn btn-primary" [disabled]="!newtaskform.valid" [hidden]="update">Post</button>
+            <button  type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+            
+            <button  type="button" class="btn btn-primary" [hidden]="!update" (click)="updat()">updata</button>
+           
+          </div>
       </div>
     </form>
     </div>

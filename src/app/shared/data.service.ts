@@ -3,32 +3,32 @@ import { Post } from 'src/app/model/posts';
 import { AngularFirestore } from '@angular/fire/compat/firestore/';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { FormControl, FormGroup } from "@angular/forms";
+
+import { FormControl, FormGroup , Validators  } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-
+  update: boolean= false;
+  taskData :any;
 
   constructor( private firestore: AngularFirestore , private http : HttpClient , private router: Router) {}
     form = new FormGroup({        
-        title : new FormControl(''),
-        task : new FormControl('')
-    })
+        title : new FormControl('', Validators.required),
+        task : new FormControl('' , Validators.required )
+    }) 
+
+    
 
 
-  // constructor(private db: AngularFirestore) { }
-  // // need to understand 
-  // createPost(post: Post) {
-  //   const postData = JSON.parse(JSON.stringify(post));
-  //   return this.db.collection('posts').add(postData);
-  //   }
+ 
   
-createTask(data:any) {
+   createTask(data:any) {
     return new Promise<any>((resolve, reject) =>{
       this.firestore
           .collection("posts")
@@ -41,13 +41,21 @@ createTask(data:any) {
   });  
 }
 
+
+
 getTask() { 
   return this.firestore.collection("posts").snapshotChanges();
 }
 
+onEditdata(data: any){
+  this.form.controls['title'].setValue(data.payload.doc.data().title);
+  this.form.controls['task'].setValue(data.payload.doc.data().task);
+  
+}
 
 UpdateTask( data: any){
-  return this.firestore.collection("posts").doc(data.payload.doc.id).set({ completed: true }, { merge: true });
+  
+  return this.firestore.collection("posts").doc(data.payload.doc.id);
 }
 
 deleteTask(data: any) {
