@@ -3,13 +3,13 @@
 Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
-- posting task and can edit or delete and display all tasks posted 
+- Posting task and can edit or delete and display all tasks posted 
 
 # Backend 
 In this project, the user can post/delete/edit tasks by using Cloud Firestore with REST APIs requests ( GET , POST, PUT, PATCH or DELETE) 
 
 # Built with 
-- setup npm. 
+- Setup npm. 
 - SASS.
 - Angular Components/services.
 - Angular Pipes. 
@@ -17,16 +17,19 @@ In this project, the user can post/delete/edit tasks by using Cloud Firestore wi
 - TypeScript.
 - Cloud Firestore.
 
-# Functions not working 
-- 'Edit function' it's worked properly until now I can't get the value from the database and set them in the text field.
+# Function 
+- Post task.
+- Delete task.
+- Edit task.
 
 # live Demo
 
 - [Tasks](https://zainabadel501.github.io/tasks/).
 
 # Next Step 
--
--
+- Sign In/Up Pages 
+- User Profile 
+
 
 
 
