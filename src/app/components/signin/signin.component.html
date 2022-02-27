@@ -1,0 +1,37 @@
+
+<div class="card">
+    
+<div class="card-body" [hidden]="loginuserform.userSignin">
+    <div class="card-title">Sign In</div>
+    <form [formGroup]="loginform" (ngSubmit)="logIn()">
+        <div class="mb-3">
+          <label for="Email1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" formControlName="email" > 
+          <div>{{msg}}</div>
+          
+          
+        </div>
+        <div class="mb-3">
+          <label for="Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Password" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="emailHelp" class="form-text">new User?<a class=" active" aria-current="page" routerLink="/SignUp">Sign Up</a></div>
+    
+</div>
+
+<div class="card-body profile" [hidden]="!loginuserform.userSignin">
+  <img class="profile__img" src="assets/blank-profile-picture.png" alt="blank-profile-picture">
+  <div *ngIf="( user$ | async) as user">
+    <h2>{{user.fullname}}</h2> 
+  </div>
+
+
+</div>
+
+
+
+
+
+</div>

@@ -24,7 +24,7 @@ export class NewTaskComponent implements OnInit {
 
 
   public newtaskform !: FormGroup ;
-  constructor(  public newtaskdat : DataService , private router: Router) { }
+  constructor( public newtaskdat : DataService , private router: Router) { }
 
   ngOnInit(): void {
     this.newtaskform =this.newtaskdat.form;

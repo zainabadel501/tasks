@@ -14,7 +14,7 @@ export class EditTaskComponent implements OnInit {
   taskData :any = this.newtaskdat.taskData;
 
   
-  constructor( private Api : ApiService , private router: Router , private newtaskdat : DataService ) { }
+  constructor( private Api : ApiService , private router: Router , public newtaskdat : DataService ) { }
 
   ngOnInit(): void {
   this.getAlltask();

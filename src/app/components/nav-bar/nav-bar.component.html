@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid ">
-      <a class="navbar-brand" href="#">FirstSite</a>
+      <a class="navbar-brand " href="#">FirstSite</a>
       <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed" [attr.arr-expanded]="!isCollapsed" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
           </li>
         </ul>
-        <button type="button" class="btn btn-outline-primary"><a routerLink="/NewTask">New Task</a></button>
+        <button type="button" class="btn btn-outline-primary" [disabled]="!newtaskdat.userSignin"><a routerLink="/NewTask" >New Task</a></button>
       </div>
       
     </div>
