@@ -5,20 +5,28 @@
   <app-signin></app-signin>
 </div>
 <div class="col-lg-9 col-md-8">
+  <hr>
     <div class="row" >
         <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let r of taskData">
           <div class="card" >
             <div class="card-body">
               <div>
+                
               <h3 class="card-title">{{r.payload.doc.data().title}}</h3>
               <p class="card-text">{{r.payload.doc.data().task}} </p>
-              <h3>{{r.payload.doc.data().id}} </h3>
+              
+              <!-- <h3>{{r.payload.doc.data().id}} </h3> -->
+              <div>
+                
+              </div>
             </div>
             <div class="btns">
               <a class="btn btn-edit" routerLink="/NewTask" (click)="onEdit(r)" [hidden]="!newtaskdat.userSignin">Edit</a>
               <a  class="btn btn-red" (click)="deleteTask(r)" [hidden]="!newtaskdat.userSignin"> Delete</a>
             </div>
+
             </div>
+            <h6 class="date">{{r.payload.doc.data().date}}</h6>
           </div>
         </div>
       </div>

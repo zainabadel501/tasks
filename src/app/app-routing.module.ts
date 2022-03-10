@@ -6,8 +6,9 @@ import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path : 'NewTask' , component: NewTaskComponent },
-   { path : '' , component: EditTaskComponent},
+   { path : 'Edittask' , component: EditTaskComponent},
    { path : 'SignUp' , component: SignupComponent},
+   { path : '' , redirectTo:'Edittask' , pathMatch : 'full'}
   
 ];
 

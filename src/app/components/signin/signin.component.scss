@@ -1,8 +1,12 @@
-.card {
-    width: 100%;
-    // margin-top: -2rem;
-    border-radius: 9px;
-    background-color: #FAEEE7;
+.card_signin {
+    width: 22%;
+    height: 100%;
+    background-color: #F5F5F5;
+    position: absolute;
+    padding-top: 3rem;
+    top: 0;
+    left:0; 
+    bottom:0; 
 }
 
 .card-body {
@@ -10,13 +14,23 @@
 }
 
 .profile {
+
     text-align: center;
+    
 
     &__img{
         border-radius: 50%;
         height: 25%;
         width: 25%;
+        padding-bottom: .5rem;
     }
+}
+.log_out{
+    margin: 0 0 1rem 1rem;
+}
+h1,h2,h3,h4 {
+    padding: 0;
+    margin: 0;
 }
 
 .card-title {
@@ -35,17 +49,25 @@ a {
 }
 
 
-@media (max-width: 992px){
+@media (max-width: 767px){
 
     .card-body {
-        margin: 0 1rem;
+        margin: 0 .7rem;
         
+    }
+
+    .card_signin {
+        position:static;
+        width: 100%;
     }
 }
 
 @media (max-width: 575px){
     .card-body {
-        margin: 0 1.5rem;
-        
+        margin: 0 1.5rem;   
+    }
+    .card_signin {
+        position:static;
+        width: 100%;
     }
 }

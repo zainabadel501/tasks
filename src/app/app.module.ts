@@ -19,7 +19,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 
@@ -45,7 +46,9 @@ import {MatSelectModule} from '@angular/material/select';
     AngularFirestoreModule,
     NgMaterialModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    AngularFireStorageModule,
+    AngularSvgIconModule.forRoot() 
    
     
    

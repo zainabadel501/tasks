@@ -1,5 +1,5 @@
 
-<div class="card">
+<div class="card_signin d-flex  flex-column bd-highlight mb-3">
     
 <div class="card-body" [hidden]="loginuserform.userSignin">
     <div class="card-title">Sign In</div>
@@ -22,16 +22,52 @@
 </div>
 
 <div class="card-body profile" [hidden]="!loginuserform.userSignin">
-  <img class="profile__img" src="assets/blank-profile-picture.png" alt="blank-profile-picture">
+
+
+  <div  *ngIf="loginuserform.downloadURL | async; let url">
+    <img class="profile__img" [src]="url" alt="Image from AngularFireStorage" (error)="onError()"> 
+    <!-- <img class="profile__img" src="{{ url ? url:defaultimg}}"/> -->
+    <!-- <img class="profile__img" src=" assets/blank-profile-picture.png"/> its workin-->
+    
+
+</div>
+  
   <div *ngIf="( user$ | async) as user">
-    <h2>{{user.fullname}}</h2> 
+    <!-- <h2>{{user.fullname}}</h2>
+    <h3>{{user.major}}</h3>  -->
   </div>
+
+
+
+  <div *ngIf="loginuserform.userdata as user1">
+    <!-- <img class="profile__img" [src]="user1.profile_img" alt="Image from AngularFireStorage"> -->
+    <h2>{{user1.fullname}}</h2>
+    <h3>{{user1.major}}</h3> 
+
+
+  </div>
+
+ 
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+  
 
 
 </div>
 
-
-
-
-
+<div class="log_out" [hidden]="!loginuserform.userSignin">
+<button type="button" class="btn btn-outline-danger btn-sm" (click)="LogOut()" >LOG OUT</button>
+</div>
 </div>

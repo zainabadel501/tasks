@@ -14,7 +14,8 @@ import { DataService } from 'src/app/shared/data.service';
 export class NewTaskComponent implements OnInit {
   tasks = {
     title : "",
-    task :""
+    task :"",
+    date:""
   };
 
   Uptasks = {
@@ -44,10 +45,13 @@ export class NewTaskComponent implements OnInit {
   
   post() {
 
+    
     this.tasks.title=this.newtaskdat.form.value.title;
     this.tasks.task=this.newtaskdat.form.value.task;
+    this.tasks.date=this.newtaskdat.createDate();
     console.log(this.tasks);
     this.newtaskdat.createTask(this.tasks);
+    
     
   }
 

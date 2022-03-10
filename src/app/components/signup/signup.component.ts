@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {  FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/shared/data.service';
+import { AngularFireStorage , AngularFireStorageReference , AngularFireUploadTask } from '@angular/fire/compat/storage';
+import { Observable } from 'rxjs';
+import { map , finalize } from 'rxjs/operators';
 
 interface major  {
   value: string;
@@ -16,48 +19,81 @@ interface major  {
 
 
 export class SignupComponent implements OnInit {
-  
+  randomId = Math.random().toString(36).substring(2);
   public isToggle=true;
+  path:string="";  
   user={
     fullname : "",
     email:"",
     password:"",
-    // major:"",
-    profile_img:"" 
+    major:"",
+    profile_img:{}
   }
+
+
   
   majors:major[]=[
     {value: 'Business-0', viewValue: 'business'},
     {value: 'Art-1', viewValue: 'Art'},
-    {value: 'Science-2', viewValue: 'Science'},
+    {value: 'Math-3', viewValue: 'Math'},
+    {value: 'Science-4', viewValue: 'Science'},
+    {value: 'Education-5', viewValue: 'Education'},
+    {value: 'English-6', viewValue: 'English'}
+
   ];
+
+    // selectedmajer:string="";
  
-  constructor(public newuser : DataService , private router: Router) { }
+  constructor(public newuser : DataService , private router: Router , private af: AngularFireStorage) { }
   public newUserform !: FormGroup;
   ngOnInit(): void {
     this.newUserform=this.newuser.userform;
   }
 
+
   post(){
     this.user.fullname=this.newuser.userform.value.fullname;
     this.user.email=this.newuser.userform.value.email;
     this.user.password=this.newuser.userform.value.password;
-    // this.user.major=this.newuser.userform.value.major;
-    // this.user.profile_img="src\assets\blank-profile-picture.png";
-    // console.log(this.user);
-    // this.newuser.uploadimg(this.user.profile_img);
+    this.user.major=this.newuser.selectedmajer;
+    this.user.profile_img=this.randomId;
+    // typeof(this.user.profile_img);
+    this.uploadimg();
     this.newuser.createUser(this.user);
 
   }
 
-  Upload($event:any){
-    this.user.profile_img=$event.target.files[0];
+  ref !: AngularFireStorageReference;
+  task !: AngularFireUploadTask;
+  
+  
 
-    // search in google about $event classes and methods
-    // if($event.empty){
-    //   this.user.profile_img="src\assets\blank-profile-picture.png";
-    // }
+  uploadimg(){
+
+    
+  //  this.af.upload("/files"+Math.random()+this.path,this.path);
+   this.ref = this.af.ref('/files/' + this.randomId);
+   this.task = this.ref.put(this.path);
+  //  this.downloadURL = this.ref.getDownloadURL();
+  
+  //  this.newuser.downloadURL=this.af.ref('/files/' + this.newuser.loginuser+'.jpg').getDownloadURL();
+  //  this.task.snapshotChanges().pipe(
+  //   finalize(() => this.downloadURL = this.ref.getDownloadURL())
+  // )
+  // .subscribe( res =>{
+  //   console.log(this.downloadURL);
+  // });
+   
+  
+  }
+
+  Upload($event:any){
+    this.path=$event.target.files[0];
+ 
+
 
   }
+
+
 
 }

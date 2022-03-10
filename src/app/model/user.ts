@@ -3,6 +3,7 @@ export interface user {
     email : string;
     password : string;
     fullname:string;
-    
+    major:string;
+    profile_img:File;
 
     }

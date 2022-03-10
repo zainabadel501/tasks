@@ -6,19 +6,19 @@
 }
 
 body {
-    background-color: #FBF8F1;
+    background-color: #ffff;
 }
 
 .navbar {
-    margin:2% 0;
+    margin:1% 0 0 0;
     width: 100%;
 }
 
 
 
 .card {
-    margin: 5% auto;
-    border-radius: 18px;
+    margin: 4% auto;
+    // border-radius: 18px;
     // border-color: #54BAB9;
     width : 50%;
     text-align: center;
@@ -50,15 +50,16 @@ body {
     margin: 0.7rem 0;    
 }
 
-.btn-primary {
-    background-color: #54BAB9;
-    border-color: aliceblue;
-}
-.btn-primary:hover {
-    background-color: #FBF8F1;
-    border-color: #54BAB9;
-    color: #54BAB9;
-}
+// .btn-primary {
+//     background-color: #54BAB9;
+//     border-color: aliceblue;
+   
+// }
+// .btn-primary:hover {
+//     background-color: #FBF8F1;
+//     border-color: #54BAB9;
+//     color: #54BAB9;
+// }
 
 .btn-danger {
     background-color: #FF6464;

@@ -7,27 +7,38 @@
         <div class="form-group">
             <label for="inputfullname">Full name</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="name" formControlName="fullname">
+            <div *ngIf="newUserform.controls['fullname'].errors?.['minlength']">
+              name must be at least 6 characters long.
+            </div>
           </div>
         <div class="row">
 
             <div class="form-group col-md-6">
               <label for="signupEmail">Email</label>
-              <input type="Email" class="form-control" id="signupEmail" placeholder="Email" formControlName="email">
+              <input type="Email" class="form-control" id="signupEmail" placeholder="Email" formControlName="email" [pattern]="newuser.emailpattern">
+              <div *ngIf="newUserform.controls['email'].errors?.['pattern']">
+                example@example.com.
+           </div>
             </div>
             <div class="form-group col-md-6">
                 <label for="signupPassword">Password</label>
                 <input type="password" class="form-control" id="signuppassword" placeholder="password" formControlName="password">
-              </div>
+                <div *ngIf="newUserform.controls['password'].errors?.['minlength']">
+                  password must be at least 6 characters long.
+                </div>
+              </div> 
         </div>
 
         <mat-form-field appearance="fill">
             <mat-label>choose your major</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let major of majors" [value]="major.value">
+            <mat-select [(value)]="newuser.selectedmajer"> 
+              <mat-option *ngFor="let major of majors" [value]="major.viewValue">
                 {{major.viewValue}}
               </mat-option>
             </mat-select>
           </mat-form-field>
+
+          <!-- <p><span>you selected: {{newuser.selectedmajer}}</span></p> -->
 
 
 
@@ -37,7 +48,8 @@
             <label for="formFile" class="form-label">Profile Picture</label>
             <input class="form-control" type="file" id="formFile" (change)="Upload($event)" accept="*.png.jpg">
           </div>
-          <button type="submit" class="btn btn-primary">Sign IN</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!newUserform.valid">submit</button>
+          <!-- [disabled]="!newUserform.valid" -->
       </form>
      
     </div>

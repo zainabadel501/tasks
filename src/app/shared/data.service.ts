@@ -20,21 +20,30 @@ export class DataService {
   userSignin:boolean=false;
   taskData:any;
   userdata : any;
+  emailpattern:string="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  selectedmajer:string="";
+  downloadURL !: Observable<user>;
+  fulDate:string="";
+  
+  
+
   
 
 
 
-  constructor( private firestore: AngularFirestore , private http : HttpClient , private router: Router , private af: AngularFireStorage) {}
+  constructor( private firestore: AngularFirestore , private http : HttpClient , private router: Router , private af: AngularFireStorage ) {}
     form = new FormGroup({        
         title : new FormControl('', Validators.required),
         task : new FormControl('' , Validators.required )
     });
 
     userform=new FormGroup ({
-      fullname: new FormControl('', Validators.required),
+      fullname: new FormControl('', [Validators.minLength(6),
+      Validators.required]),
       email: new FormControl('', Validators.required),
       // major: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', [Validators.minLength(6),
+      Validators.required])
 
     });
 
@@ -84,11 +93,7 @@ deleteTask(data: any) {
 }
 
 
-uploadimg(path:any){
-  console.log(path);
-  this.af.upload("/files"+Math.random()+path,path);
 
-}
 
 logIn(userdata:any) : Observable<user>{
 
@@ -98,12 +103,17 @@ logIn(userdata:any) : Observable<user>{
   const user$ = userref.valueChanges().pipe(
     map(users => {
       const user = users[0];
-      console.log(user);
+      // console.log(user);
+      this.userdata=user;
+      localStorage.setItem('user',JSON.stringify(this.userdata));
+      JSON.parse(localStorage.getItem('user')!);
+      console.log(this.userdata);
+      
       return user;
     })
   );
  
-  console.log(user$);
+  // console.log(user$);
  return user$;
 
 }
@@ -121,7 +131,30 @@ createUser(data:any) {
 });  
 }
 
+get isLogIn():boolean{
+
+  const useronline= JSON.parse(localStorage.getItem('user')!);
+  this.userdata=useronline;
+  
+  // this.downloadURL=this.af.ref('/files/' + this.userdata.profile_img).getDownloadURL();
+  return (useronline !== null) ? true +this.userdata : false;
+  
 }
+
+
+createDate(){
+  const date = new Date();
+  this.fulDate=date.getDate().toString()+"/"+ (date.getMonth()+1).toString()+"/" + date.getFullYear().toString();
+  return this.fulDate;
+
+}
+}
+
+
+
+
+
+
 
 
 
