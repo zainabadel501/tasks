@@ -60,6 +60,7 @@ export class SigninComponent implements OnInit {
               this.msg = 'success';
               this.loginuserform.userSignin=true;
               this.loginuserform.downloadURL=this.af.ref('/files/' + user.profile_img).getDownloadURL();
+              JSON.parse(localStorage.getItem('user')!);
               
             } else {
               this.msg = 'User with this email does not exist!';

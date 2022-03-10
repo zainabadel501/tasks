@@ -106,7 +106,7 @@ logIn(userdata:any) : Observable<user>{
       // console.log(user);
       this.userdata=user;
       localStorage.setItem('user',JSON.stringify(this.userdata));
-      JSON.parse(localStorage.getItem('user')!);
+      // JSON.parse(localStorage.getItem('user')!);
       console.log(this.userdata);
       
       return user;
